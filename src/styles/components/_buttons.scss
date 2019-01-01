@@ -1,0 +1,47 @@
+button {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: $l-size;
+    margin: $m-size $s-size 0 0;
+    width: 65px;
+    height: 65px;
+    &:hover {
+        background: darken($deep-blue, 1%);
+    }
+}
+
+
+button.equals {
+    width: inherit;
+    height: inherit;
+    padding: 0;
+    margin-bottom: 15px;
+    margin-left: $m-size;
+    background: darken($deep-blue, 5%);
+    &:hover {
+        background: darken($deep-blue, 8%);
+    }
+}
+
+button.delete {
+    @extend button.equals;
+    font-size: $m-size;
+    background: lighten(red, 10%);
+    &:hover {
+        background: lighten(red, 5%);
+    }
+}
+
+.result {
+    transition: all .5s ease;
+    transform: scale(1);
+}
+
+.result.showPrev {
+    position: relative;
+    right: -10px;
+    transform: scale(.5);
+    opacity: .7;
+}
