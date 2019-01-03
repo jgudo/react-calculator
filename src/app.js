@@ -7,7 +7,7 @@ import WebFont from 'webfontloader';
 
 WebFont.load({
   google: {
-    families: ['Lato:700,900']
+    families: ['Mukta']
   }
 });
 

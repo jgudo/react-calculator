@@ -2,36 +2,20 @@ button {
     padding: 10px 20px;
     background: none;
     border: none;
-    color: #fff;
+    color: $black;
     font-size: $l-size;
+    width: 60px;
+    height: 60px;
     margin: $m-size $s-size 0 0;
-    width: 65px;
-    height: 65px;
-    &:hover {
-        background: darken($deep-blue, 1%);
-    }
 }
 
 
 button.equals {
-    width: inherit;
-    height: inherit;
-    padding: 0;
-    margin-bottom: 15px;
-    margin-left: $m-size;
-    background: darken($deep-blue, 5%);
-    &:hover {
-        background: darken($deep-blue, 8%);
-    }
+    border-radius: 50%; 
 }
 
 button.delete {
-    @extend button.equals;
     font-size: $m-size;
-    background: lighten(red, 10%);
-    &:hover {
-        background: lighten(red, 5%);
-    }
 }
 
 .result {
@@ -44,4 +28,86 @@ button.delete {
     right: -10px;
     transform: scale(.5);
     opacity: .7;
+}
+
+
+%button-yellow {
+    background: $off-yellow;
+    color: $black;
+    box-shadow: 0 10px 15px rgba(0,0,0,.2);
+}
+
+%button-black {
+    background: $black;
+    color: #fff;
+    box-shadow: 0 10px 15px rgba(0,0,0,.2);
+}
+
+%button-pink {
+    background: linear-gradient(140deg, $lred 40%, $dred);;
+    color: #fff;
+    box-shadow: 0 10px 15px rgba(0,0,0,.2);
+}
+
+%button-blue {
+    background: linear-gradient(140deg, $lblue 40%, $dblue);;
+    color: #fff;
+    box-shadow: 0 10px 15px rgba(0,0,0,.2);
+}
+
+//THEME
+.theme--yellow {
+    button {
+        color: $black;
+    }
+    button.equals {
+        @extend %button-black;
+    }
+}
+
+//blue
+.theme--blue {
+    button {
+        color: #fff;
+    }
+    button.equals {
+        @extend %button-yellow;
+    }
+}
+
+.theme--pink {
+    button {
+        color: #fff;
+    }
+    button.equals {
+        @extend %button-yellow;
+    }
+}
+
+//purple
+.theme--purple {
+    button {
+        color: #fff;
+    }
+
+    button.equals {
+        @extend %button-pink;
+    }
+}
+
+//black
+.theme--dark {
+    button {
+        color: #fff;
+    }
+    button.equals {
+        @extend %button-blue;
+    }
+}
+
+//default 
+.theme--default {
+    button {
+        color: $black;
+    }
 }

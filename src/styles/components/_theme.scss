@@ -1,0 +1,51 @@
+.theme {
+  width: 100px;
+  position: fixed;
+  right: -100px;
+  top: $xl-size;
+  background: linear-gradient(140deg, $lblue 30%, $dblue);
+  transition: all .3s ease;
+  color: #fff;
+}
+
+.theme.toggleOption {
+  right: 0;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(140deg, $lred 30%, $dred);;
+  position: absolute;
+  left: -40px;
+
+  img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0; 
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    pointer-events: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.theme-chooser {
+  position: relative;
+  padding: $m-size;
+  display: flex;
+  flex-direction: column;
+
+  div { 
+    margin-bottom: $s-size; 
+  }
+
+  input { margin-right: 5px; }
+  input:hover, 
+  label:hover { cursor: pointer;}
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Theme from './Theme';
 
 class CalculatorApp extends React.Component {
     constructor(props){
@@ -102,21 +103,31 @@ class CalculatorApp extends React.Component {
     render() {
         return (
             <div className="container">
-                <h1 className="title">React Calculator</h1>
+                <Theme />
+                <div className="container-wrapper">
                 <div className="container-result">
                    <p className="result">{this.state.result}</p>
                    <p>{this.state.input }</p>
                 </div>
+                <div className="divider"></div>
                 <div className="container-numbers">
+                    <button>()</button>
                     <button onClick={() => {
-                        this.numberHandler(1);
-                    }}>1</button>
+                        this.numberHandler('%');
+                    }}>%</button>
                     <button onClick={() => {
-                        this.numberHandler(2);
-                    }}>2</button>
+                        this.setState(() => ({ input: [], result: undefined}));
+                    }}>C</button>
                     <button onClick={() => {
-                        this.numberHandler(3);
-                    }}>3</button>
+                        this.numberHandler(7);
+                    }}>7</button>
+                    <button onClick={() => {
+                        this.numberHandler(8);
+                    }}>8</button>
+                    <button onClick={() => {
+                        this.numberHandler(9);
+                    }}>9</button>
+
                     <button onClick={() => {
                         this.numberHandler(4);
                     }}>4</button>
@@ -127,23 +138,24 @@ class CalculatorApp extends React.Component {
                         this.numberHandler(6);
                     }}>6</button>
                     <button onClick={() => {
-                        this.numberHandler(7);
-                    }}>7</button>
+                        this.numberHandler(1);
+                    }}>1</button>
                     <button onClick={() => {
-                        this.numberHandler(8);
-                    }}>8</button>
+                        this.numberHandler(2);
+                    }}>2</button>
                     <button onClick={() => {
-                        this.numberHandler(9);
-                    }}>9</button>
+                        this.numberHandler(3);
+                    }}>3</button>
+                    
+                    <button onClick={this.deleteHandler} className="delete">del</button>
+                    
                     <button onClick={() => {
                         this.numberHandler(0);
                     }}>0</button>
                     <button onClick={() => {
                         this.numberHandler('.');
                     }}>.</button>
-                    <button onClick={() => {
-                        this.setState(() => ({ input: [], result: undefined}));
-                    }}>c</button>
+                    
                 </div>
                 <div className="container-operators">
                     <button onClick={() => {
@@ -158,13 +170,11 @@ class CalculatorApp extends React.Component {
                     <button onClick={() => {
                         this.numberHandler('/');
                     }}>/</button>
+                    <button onClick={this.calculateHandler} className="equals">=</button>
                     
                 </div>
-                <div className="container-equals">
-                    <button onClick={this.deleteHandler} className="delete">del</button>
-                    <button onClick={this.calculateHandler} className="equals">=</button>
-                </div>
 
+            </div>
             </div>
            
         );
