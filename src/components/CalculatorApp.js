@@ -111,13 +111,12 @@ class CalculatorApp extends React.Component {
                 </div>
                 <div className="divider"></div>
                 <div className="container-numbers">
-                    <button>()</button>
+                    <button onClick={() => {
+                        this.setState(() => ({ input: [], result: undefined}));
+                    }} className="clear">CLEAR</button>                
                     <button onClick={() => {
                         this.numberHandler('%');
                     }}>%</button>
-                    <button onClick={() => {
-                        this.setState(() => ({ input: [], result: undefined}));
-                    }}>C</button>
                     <button onClick={() => {
                         this.numberHandler(7);
                     }}>7</button>
