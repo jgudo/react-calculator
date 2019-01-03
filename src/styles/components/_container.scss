@@ -30,7 +30,7 @@
     width: 90%;
     padding: $m-size;
     display: block;
-    color: #fff;
+    color: $black;
     font-size: $l-size;
     height: 110px;
     position: relative;
@@ -38,6 +38,14 @@
     left: 0;
     right: 0;
     margin: auto;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+    &::scrollbar {
+        width: 0;
+    }
     p {
         margin: 0;
         word-break: break-all;
@@ -75,6 +83,9 @@
     .container-wrapper {
         background: linear-gradient(140deg, $lblue 40%, $dblue);
     }
+    .container-result {
+        color: #fff;
+    }
 }
 //pink
 .theme--pink {
@@ -83,6 +94,9 @@
     }
     .container-wrapper {
         background: linear-gradient(140deg, $lred 40%, $dred);
+    }
+    .container-result {
+        color: #fff;
     }
 }
 //purple
@@ -93,6 +107,9 @@
     .container-wrapper {
         background: linear-gradient(140deg, $lpurple 40%, $dpurple);
     }
+    .container-result {
+        color: #fff;
+    }
 }
 //black
 .theme--dark {
@@ -101,6 +118,9 @@
     }
     .container-wrapper {
         background: linear-gradient(140deg, $lblack 40%, $black);
+    }
+    .container-result {
+        color: #fff;
     }
 }
 
