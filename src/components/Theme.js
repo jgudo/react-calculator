@@ -5,7 +5,7 @@ const Theme = () => {
     e.stopPropagation();
     const parent = e.target.parentElement;
     parent.classList.toggle('toggleOption');
-    console.log('triggered');
+    //console.log('triggered');
   };
 
   const handleThemeOption = (e) => {
@@ -14,7 +14,7 @@ const Theme = () => {
     const app = document.getElementById('app');
     app.className = '';
     app.classList.add(`theme--${el.value}`);
-    console.log(el.value);
+    //console.log(el.value);
   }
 
   window.addEventListener('DOMContentLoaded', () => {

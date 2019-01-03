@@ -63,6 +63,12 @@
 
 }
 
+%divider-dark {
+    background: rgba(0,0,0, .2);
+}
+%divider-light {
+    background: rgba(255,255,255, .2);
+}
 .divider {
     width: 90%;
     height:1px;
@@ -70,8 +76,9 @@
     left:0;
     right: 0;
     margin: auto;
-    background: rgba(255,255,255, .2);
+    @extend %divider-dark;
 }
+
 
 
 //THEME
@@ -86,6 +93,8 @@
     .container-result {
         color: #fff;
     }
+   .divider {  @extend %divider-light; }
+
 }
 //pink
 .theme--pink {
@@ -98,6 +107,7 @@
     .container-result {
         color: #fff;
     }
+    .divider {  @extend %divider-light; }
 }
 //purple
 .theme--purple {
@@ -110,6 +120,7 @@
     .container-result {
         color: #fff;
     }
+    .divider {  @extend %divider-light; }
 }
 //black
 .theme--dark {
@@ -122,6 +133,7 @@
     .container-result {
         color: #fff;
     }
+    .divider {  @extend %divider-light; }
 }
 
 //yellow
@@ -136,7 +148,7 @@
         color: $black;
     }
     .divider {
-        background: rgba(0,0,0, .2);
+        @extend %divider-dark;
     }
 }
 
@@ -152,7 +164,7 @@
         color: $black;
     }
     .divider {
-        background: rgba(0,0,0, .2);
+        @extend %divider-dark;
     }
 }
 
