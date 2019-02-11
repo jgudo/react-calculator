@@ -19,10 +19,7 @@ class CalculatorApp extends React.Component {
         let w = [];
         w = [...this.state.input, value];
         w = w.toString().split(',').join('');
-        
-        // console.log('W: ', w);
-        // console.log('Test: ', reg.test(w));
-
+    
         if(this.state.input.length === 0 && value == '.') {
             this.setState(() => ({
                 input: [0,'.']
@@ -77,9 +74,7 @@ class CalculatorApp extends React.Component {
             } catch(e) {
                 this.setState(() => ({result: undefined}));
             }
-            //console.log('JOIN: ', input.join(''));
-            //console.log(output);
-            
+       
         } else {
             this.setState(() => ({
                 result: 'Syntax Error'
@@ -105,79 +100,82 @@ class CalculatorApp extends React.Component {
             <div className="container">
                 <Theme />
                 <div className="container-wrapper">
-                <div className="container-result">
-                   <p className="result">{this.state.result}</p>
-                   <p>{this.state.input }</p>
-                </div>
-                <div className="divider"></div>
-                <div className="container-numbers">
-                    <button onClick={() => {
-                        this.setState(() => ({ input: [], result: undefined}));
-                    }} className="clear">CLEAR</button>                
-                    <button onClick={() => {
-                        this.numberHandler('%');
-                    }}>%</button>
-                    <button onClick={() => {
-                        this.numberHandler(7);
-                    }}>7</button>
-                    <button onClick={() => {
-                        this.numberHandler(8);
-                    }}>8</button>
-                    <button onClick={() => {
-                        this.numberHandler(9);
-                    }}>9</button>
+                    <div className="container-result">
+                        <p className="result">{this.state.result}</p>
+                        <p>{this.state.input }</p>
+                    </div>
+                    <div className="divider"></div>
+                    <div className="container-numbers">
+                        <button onClick={() => {
+                            this.setState(() => ({ input: [], result: undefined}));
+                        }} className="clear">CLEAR</button>                
+                        <button onClick={() => {
+                            this.numberHandler('%');
+                        }}>%</button>
+                        <button onClick={() => {
+                            this.numberHandler(7);
+                        }}>7</button>
+                        <button onClick={() => {
+                            this.numberHandler(8);
+                        }}>8</button>
+                        <button onClick={() => {
+                            this.numberHandler(9);
+                        }}>9</button>
 
-                    <button onClick={() => {
-                        this.numberHandler(4);
-                    }}>4</button>
-                    <button onClick={() => {
-                        this.numberHandler(5);
-                    }}>5</button>
-                    <button onClick={() => {
-                        this.numberHandler(6);
-                    }}>6</button>
-                    <button onClick={() => {
-                        this.numberHandler(1);
-                    }}>1</button>
-                    <button onClick={() => {
-                        this.numberHandler(2);
-                    }}>2</button>
-                    <button onClick={() => {
-                        this.numberHandler(3);
-                    }}>3</button>
-                    
-                    <button onClick={this.deleteHandler} className="delete">del</button>
-                    
-                    <button onClick={() => {
-                        this.numberHandler(0);
-                    }}>0</button>
-                    <button onClick={() => {
-                        this.numberHandler('.');
-                    }}>.</button>
-                    
+                        <button onClick={() => {
+                            this.numberHandler(4);
+                        }}>4</button>
+                        <button onClick={() => {
+                            this.numberHandler(5);
+                        }}>5</button>
+                        <button onClick={() => {
+                            this.numberHandler(6);
+                        }}>6</button>
+                        <button onClick={() => {
+                            this.numberHandler(1);
+                        }}>1</button>
+                        <button onClick={() => {
+                            this.numberHandler(2);
+                        }}>2</button>
+                        <button onClick={() => {
+                            this.numberHandler(3);
+                        }}>3</button>
+                        
+                        <button 
+                            onClick={this.deleteHandler} 
+                            className="delete">
+                        del
+                        </button>
+                        
+                        <button onClick={() => {
+                            this.numberHandler(0);
+                        }}>0</button>
+                        <button onClick={() => {
+                            this.numberHandler('.');
+                        }}>.</button>
+                    </div>
+                    <div className="container-operators">
+                        <button onClick={() => {
+                            this.numberHandler('+');
+                        }}>+</button>
+                        <button onClick={() => {
+                            this.numberHandler('-');
+                        }}>-</button>
+                        <button onClick={() => {
+                            this.numberHandler('*');
+                        }}>x</button>
+                        <button onClick={() => {
+                            this.numberHandler('/');
+                        }}>/</button>
+                        <button 
+                            onClick={this.calculateHandler} 
+                            className="equals">
+                        =
+                        </button>
+                    </div>
                 </div>
-                <div className="container-operators">
-                    <button onClick={() => {
-                        this.numberHandler('+');
-                    }}>+</button>
-                    <button onClick={() => {
-                        this.numberHandler('-');
-                    }}>-</button>
-                    <button onClick={() => {
-                        this.numberHandler('*');
-                    }}>x</button>
-                    <button onClick={() => {
-                        this.numberHandler('/');
-                    }}>/</button>
-                    <button onClick={this.calculateHandler} className="equals">=</button>
-                    
-                </div>
-
-            </div>
-            </div>
-           
+            </div>  
         );
-
     }
 }
 
