@@ -1,3 +1,3 @@
 # Live Demo 
 
- <https://calculator-reactapp.herokuapp.com>
+ <https://kalkuleytor.netlify.com>
