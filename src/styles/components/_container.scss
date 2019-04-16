@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     background: $off-gray;
+    overflow: hidden;
 }
 
 .container-wrapper {
@@ -15,7 +16,6 @@
     flex-wrap: wrap;
     border-radius: 10px;
     box-shadow: 5px 5px 40px rgba(0,0,0,.3);
-
 }
 
 .container-numbers {
@@ -29,7 +29,6 @@
 .container-result {
     width: 90%;
     padding: $m-size;
-    display: block;
     color: $black;
     font-size: $l-size;
     height: 110px;
@@ -60,111 +59,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
-%divider-dark {
-    background: rgba(0,0,0, .2);
-}
-%divider-light {
-    background: rgba(255,255,255, .2);
-}
-.divider {
-    width: 90%;
-    height:1px;
-    position: relative;
-    left:0;
+.result {
+    font-size: 14px;
+    opacity: .5;
     right: 0;
-    margin: auto;
-    @extend %divider-dark;
+    transition: all .5s ease;
+    animation: scale .5s ease forwards;
 }
 
-
-
-//THEME
-//blue
-.theme--blue  {
-    .container {
-        background: $off-gray;
-    }
-    .container-wrapper {
-        background: linear-gradient(140deg, $lblue 40%, $dblue);
-    }
-    .container-result {
-        color: #fff;
-    }
-   .divider {  @extend %divider-light; }
-
-}
-//pink
-.theme--pink {
-    .container {
-        background: $off-gray;
-    }
-    .container-wrapper {
-        background: linear-gradient(140deg, $lred 40%, $dred);
-    }
-    .container-result {
-        color: #fff;
-    }
-    .divider {  @extend %divider-light; }
-}
-//purple
-.theme--purple {
-    .container {
-        background: $off-gray;
-    }
-    .container-wrapper {
-        background: linear-gradient(140deg, $lpurple 40%, $dpurple);
-    }
-    .container-result {
-        color: #fff;
-    }
-    .divider {  @extend %divider-light; }
-}
-//black
-.theme--dark {
-    .container {
-        background: $off-gray;
-    }
-    .container-wrapper {
-        background: linear-gradient(140deg, $lblack 40%, $black);
-    }
-    .container-result {
-        color: #fff;
-    }
-    .divider {  @extend %divider-light; }
+.clear {
+    width: 120px;
 }
 
-//yellow
-.theme--yellow {
-    .container {
-        background: $off-gray;
+@keyframes scale {
+    from {
+        transform: scale(.5) translate(-10px, 20px);
+        opacity: .5;
     }
-    .container-wrapper {
-        background: $off-yellow;
-    }
-    .container-result {
-        color: $black;
-    }
-    .divider {
-        @extend %divider-dark;
+    to {
+        transform: scale(1) translate(0);
+        opacity: 1;
     }
 }
-
-//default 
-.theme--default {
-    .container {
-        background: $off-gray;
-    }
-    .container-wrapper {
-        background: #fff;
-    }
-    .container-result {
-        color: $black;
-    }
-    .divider {
-        @extend %divider-dark;
-    }
-}
-

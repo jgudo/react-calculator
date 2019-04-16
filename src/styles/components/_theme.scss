@@ -1,24 +1,134 @@
-.theme {
-  width: 100px;
-  position: fixed;
-  right: -100px;
-  top: $xl-size;
-  background: linear-gradient(140deg, $lblue 30%, $dblue);
-  transition: all .3s ease;
-  color: #fff;
-  z-index: 5;
+
+%divider-dark {
+  background: rgba(0,0,0, .2);
+}
+%divider-light {
+  background: rgba(255,255,255, .2);
+}
+.divider {
+  width: 90%;
+  height:1px;
+  position: relative;
+  left:0;
+  right: 0;
+  margin: auto;
+  @extend %divider-dark;
 }
 
-.theme.toggleOption {
+
+
+//THEME
+//blue
+.theme--blue  {
+  .container {
+      background: $off-gray;
+  }
+  .container-wrapper {
+      background: linear-gradient(140deg, $lblue 40%, $dblue);
+  }
+  .container-result {
+      color: #fff;
+  }
+ .divider {  @extend %divider-light; }
+
+}
+//pink
+.theme--pink {
+  .container {
+      background: $off-gray;
+  }
+  .container-wrapper {
+      background: linear-gradient(140deg, $lred 40%, $dred);
+  }
+  .container-result {
+      color: #fff;
+  }
+  .divider {  @extend %divider-light; }
+}
+//purple
+.theme--purple {
+  .container {
+      background: $off-gray;
+  }
+  .container-wrapper {
+      background: linear-gradient(140deg, $lpurple 40%, $dpurple);
+  }
+  .container-result {
+      color: #fff;
+  }
+  .divider {  @extend %divider-light; }
+}
+//black
+.theme--dark {
+  .container {
+      background: $off-gray;
+  }
+  .container-wrapper {
+      background: linear-gradient(140deg, $lblack 40%, $black);
+  }
+  .container-result {
+      color: #fff;
+  }
+  .divider {  @extend %divider-light; }
+}
+
+//yellow
+.theme--yellow {
+  .container {
+      background: $off-gray;
+  }
+  .container-wrapper {
+      background: $off-yellow;
+  }
+  .container-result {
+      color: $black;
+  }
+  .divider {
+      @extend %divider-dark;
+  }
+}
+
+//default 
+.theme--default {
+  .container {
+      background: $off-gray;
+  }
+  .container-wrapper {
+      background: #fff;
+  }
+  .container-result {
+      color: $black;
+  }
+  .divider {
+      @extend %divider-dark;
+  }
+}
+
+.theme {
+  width: 150px;
+  position: fixed;
+  right: -150px;
+  top: $xl-size;
+  background: $off-white;
+  transition: all .3s ease;
+  color: $black;
+  z-index: 5;
+  padding: 0 $s-size;
+}
+
+.theme.active {
   right: 0;
 }
 
 .theme-toggle {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(140deg, $lred 30%, $dred);;
+  width: auto;
+  color: #fff !important;
+  font-weight: bold;
+  font-size: $m-size;
+  background: linear-gradient(140deg, $lred 30%, $dred);
   position: absolute;
-  left: -40px;
+  left: -80px;
+  margin: 0;
 
   img {
     width: 20px;

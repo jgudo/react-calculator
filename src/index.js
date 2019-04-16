@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import WebFont from 'webfontloader';
+import CalculatorApp from './components/CalculatorApp';
 import 'normalize.css/normalize.css';
 import './styles/style.scss';
-import CalculatorApp from './components/CalculatorApp';
-import WebFont from 'webfontloader';
 
 WebFont.load({
   google: {
@@ -20,5 +20,3 @@ if ('serviceWorker' in navigator) {
 }
 
 ReactDOM.render(<CalculatorApp />, document.getElementById('app'));
-
-

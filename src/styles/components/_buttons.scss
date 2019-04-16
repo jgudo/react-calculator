@@ -9,7 +9,6 @@ button {
     margin: $m-size $s-size 0 0;
 }
 
-
 button.equals {
     border-radius: 50%; 
 }
@@ -17,22 +16,6 @@ button.equals {
 button.delete {
     font-size: $m-size;
 }
-
-.result {
-    transition: all .5s ease;
-    transform: scale(1);
-}
-
-.clear {
-    width: 120px;
-}
-.result.showPrev {
-    position: relative;
-    font-size: 16px;
-    //transform: scale(.5);
-    opacity: .7;
-}
-
 
 %button-yellow {
     background: $off-yellow;
